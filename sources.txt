@@ -1,0 +1,3 @@
+https://medium.com/weekly-webtips/building-modern-backendusing-nest-js-and-mongodb-96fd04f4b050
+
+https://www.bezkoder.com/angular-10-crud-app/
