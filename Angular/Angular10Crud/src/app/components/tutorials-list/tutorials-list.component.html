@@ -4,14 +4,14 @@
         <input
           type="text"
           class="form-control"
-          placeholder="Search by title"
-          [(ngModel)]="title"
+          placeholder="Search by text"
+          [(ngModel)]="text"
         />
         <div class="input-group-append">
           <button
             class="btn btn-outline-secondary"
             type="button"
-            (click)="searchTitle()"
+            (click)="searchText()"
           >
             Search
           </button>
@@ -27,7 +27,7 @@
           [class.active]="i == currentIndex"
           (click)="setActiveTutorial(tutorial, i)"
         >
-          {{ tutorial.title }}
+          {{ tutorial.text }}
         </li>
       </ul>
   
@@ -39,18 +39,11 @@
       <div *ngIf="currentTutorial">
         <h4>Tutorial</h4>
         <div>
-          <label><strong>Title:</strong></label> {{ currentTutorial.title }}
-        </div>
-        <div>
-          <label><strong>Description:</strong></label>
-          {{ currentTutorial.description }}
-        </div>
-        <div>
-          <label><strong>Status:</strong></label>
-          {{ currentTutorial.published ? "Published" : "Pending" }}
+          <label><strong>Text:</strong></label> {{ currentTutorial.text }}
         </div>
   
-        <a class="badge badge-warning" routerLink="/tutorials/{{ currentTutorial.id }}">
+        <a class="badge badge-warning" routerLink="/tutorials/{{ currentTutorial._id }}" 
+        routerLinkActive="ranos">
           Edit
         </a>
       </div>

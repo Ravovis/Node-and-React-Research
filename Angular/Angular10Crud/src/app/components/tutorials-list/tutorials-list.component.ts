@@ -11,7 +11,7 @@ export class TutorialsListComponent implements OnInit {
   tutorials: any;
   currentTutorial = null;
   currentIndex = -1;
-  title = '';
+  text = '';
 
   constructor(private tutorialService: TutorialService) { }
 
@@ -54,8 +54,8 @@ export class TutorialsListComponent implements OnInit {
         });
   }
 
-  searchTitle(): void {
-    this.tutorialService.findByTitle(this.title)
+  searchText(): void {
+    this.tutorialService.findByText(this.text)
       .subscribe(
         data => {
           this.tutorials = data;
