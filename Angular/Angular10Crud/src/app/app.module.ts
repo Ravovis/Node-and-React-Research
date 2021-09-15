@@ -8,13 +8,15 @@ import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.com
 import { TutorialDetailsComponent } from './components/tutorial-details/tutorial-details.component';
 import { TutorialsListComponent } from './components/tutorials-list/tutorials-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { D3PlayComponent } from './components/d3-play/d3-play.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddTutorialComponent,
     TutorialDetailsComponent,
-    TutorialsListComponent
+    TutorialsListComponent,
+    D3PlayComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,6 @@
+https://www.rabbitmq.com/tutorials/tutorial-one-javascript.html
+
+Чтобы поднять это все нужно иметь
+-Сервер (установить rabbitmq-server with Erlang from OTP)
+-Программу что отправляет на сервер сообщение
+-Программу что принимает с сервера сообщение по подписке
