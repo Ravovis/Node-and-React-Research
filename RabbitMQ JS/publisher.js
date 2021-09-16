@@ -13,7 +13,7 @@ async function connect(){
         channel.sendToQueue("jobs",Buffer.from(JSON.stringify(mesg)));
         console.log(`Job sent succesfully ${mesg.number}`);
     } 
-    catch (ex){
+    catch (ex){ 
         console.log(ex);
     }
-}
+} 

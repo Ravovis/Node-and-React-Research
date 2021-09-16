@@ -17,7 +17,7 @@ async function connect(){
             if(input.number == 7)// not === because it's a string
             {
                 channel.ack(message);
-            } 
+            }
         }) 
 
         console.log("Waiting for messages...")
