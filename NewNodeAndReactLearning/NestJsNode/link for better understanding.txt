@@ -1,0 +1,6 @@
+https://www.codemag.com/Article/1907081/Nest.js-Step-by-Step
+
+
+http://localhost:4000/api для тестирования
+
+npm run start:dev
