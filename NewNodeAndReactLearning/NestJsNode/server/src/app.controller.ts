@@ -52,5 +52,14 @@ export class AppController {
       lists
     })
   }
+
+
+  @Get('/getTxt')
+  async getTxt(@Res() res) {
+    var text = 'Hello world!';
+    res.attachment('filename.txt');
+    res.type('txt');
+    res.send(text);
+  }
 }
 
