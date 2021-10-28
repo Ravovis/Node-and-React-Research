@@ -2,6 +2,7 @@ import { Body, Controller, Delete, Get, HttpStatus, Logger, NotFoundException, P
 import { AppService } from './app.service';
 import { CreateMyDocumentDTO } from './dto/myDocument.dto';
 const fs = require('fs')
+import * as PDFDocument from 'pdfkit'
 
 @Controller()
 export class AppController {
@@ -73,5 +74,44 @@ export class AppController {
       res.send(data);
     })
   }
+
+  @Get('/getPdf')
+  async getPDF(@Res() res): Promise<void> {
+    const buffer = await this.generatePDF()
+
+    res.set({
+      'Content-Type': 'application/pdf',
+      'Content-Disposition': 'attachment; filename=example.pdf',
+      'Content-Length': buffer.length,
+    })
+
+    res.end(buffer)
+  }
+
+  async generatePDF(): Promise<Buffer> {
+    const pdfBuffer: Buffer = await new Promise(resolve => {
+      const doc = new PDFDocument({
+        size: 'LETTER',
+        bufferPages: true,
+      })
+
+      // customize your PDF document
+      doc.text('hello world', 100, 50)
+      doc.addPage();
+      doc.text('New Page', 100, 50)
+      doc.end()
+
+      const buffer = []
+      doc.on('data', buffer.push.bind(buffer))
+      doc.on('end', () => {
+        const data = Buffer.concat(buffer)
+        resolve(data)
+      })
+    })
+
+    return pdfBuffer
+  }
+
+  
 }
 
