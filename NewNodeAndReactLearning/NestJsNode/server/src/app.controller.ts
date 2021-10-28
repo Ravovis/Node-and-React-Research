@@ -1,6 +1,7 @@
 import { Body, Controller, Delete, Get, HttpStatus, Logger, NotFoundException, Post, Put, Query, Res } from '@nestjs/common';
 import { AppService } from './app.service';
 import { CreateMyDocumentDTO } from './dto/myDocument.dto';
+const fs = require('fs')
 
 @Controller()
 export class AppController {
@@ -60,6 +61,17 @@ export class AppController {
     res.attachment('filename.txt');
     res.type('txt');
     res.send(text);
+  }
+
+  @Get('/readFromTxt')
+  async readFromTxt(@Res() res) {
+    fs.readFile('Resources\\test.txt', 'utf8' , (err, data) => {
+      if (err) {
+        console.error(err)
+        return
+      }
+      res.send(data);
+    })
   }
 }
 
