@@ -5,6 +5,7 @@ import * as PDFDocument from 'pdfkit'
 
 const fs = require('fs')
 var json2csv = require('json2csv');
+var request = require('request');
 
 @Controller()
 export class AppController {
@@ -139,6 +140,18 @@ export class AppController {
 
     res.attachment('filename.csv');
     res.status(200).send(data);
+  }
+
+
+
+  @Get('/getAPIResponse')
+  async getAPIResponse(@Res() res): Promise<void> {
+    request('http://api.positionstack.com/v1/reverse?access_key=236904d1a58f9bc3313416694311450c&query=40.7638435,-73.9729691',
+      function (error, response, body) {
+        if (!error && response.statusCode === 200) {
+          res.status(200).send(body);
+        }
+      })
   }
 }
 
