@@ -1,8 +1,10 @@
 import { Body, Controller, Delete, Get, HttpStatus, Logger, NotFoundException, Post, Put, Query, Res } from '@nestjs/common';
 import { AppService } from './app.service';
 import { CreateMyDocumentDTO } from './dto/myDocument.dto';
-const fs = require('fs')
 import * as PDFDocument from 'pdfkit'
+
+const fs = require('fs')
+var json2csv = require('json2csv');
 
 @Controller()
 export class AppController {
@@ -112,6 +114,31 @@ export class AppController {
     return pdfBuffer
   }
 
-  
+  @Get('/getCsv')
+  async getCsv(@Res() res) {
+    const myCars = [
+      {
+        "car": "Audi",
+        "price": 40000,
+        "color": "blue"
+      }, {
+        "car": "BMW",
+        "price": 35000,
+        "color": "black"
+      }, {
+        "car": "Porsche",
+        "price": 60000,
+        "color": "green"
+      }
+    ];
+
+
+    var fields = ['car', 'price', 'color'];
+    var fieldNames = ['Car', 'Price', 'Color'];
+    var data = await  json2csv.parse( myCars, fields);
+
+    res.attachment('filename.csv');
+    res.status(200).send(data);
+  }
 }
 
