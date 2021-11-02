@@ -63,3 +63,9 @@ C:\Users\Ranos\Documents\Node-and-React-Research\NewNodeAndReactLearning\AspNetC
 C:\Users\Ranos\Documents\Node-and-React-Research\NewNodeAndReactLearning\AspNetCoreCrud\CrudAspNetApi\CrudAspNetApi\obj\Debug\netcoreapp3.1\CrudAspNetApi.dll
 C:\Users\Ranos\Documents\Node-and-React-Research\NewNodeAndReactLearning\AspNetCoreCrud\CrudAspNetApi\CrudAspNetApi\obj\Debug\netcoreapp3.1\CrudAspNetApi.pdb
 C:\Users\Ranos\Documents\Node-and-React-Research\NewNodeAndReactLearning\AspNetCoreCrud\CrudAspNetApi\CrudAspNetApi\obj\Debug\netcoreapp3.1\CrudAspNetApi.genruntimeconfig.cache
+C:\Users\Ranos\Documents\Node-and-React-Research\NewNodeAndReactLearning\AspNetCoreCrud\CrudAspNetApi\CrudAspNetApi\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Ranos\Documents\Node-and-React-Research\NewNodeAndReactLearning\AspNetCoreCrud\CrudAspNetApi\CrudAspNetApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Ranos\Documents\Node-and-React-Research\NewNodeAndReactLearning\AspNetCoreCrud\CrudAspNetApi\CrudAspNetApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Ranos\Documents\Node-and-React-Research\NewNodeAndReactLearning\AspNetCoreCrud\CrudAspNetApi\CrudAspNetApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Ranos\Documents\Node-and-React-Research\NewNodeAndReactLearning\AspNetCoreCrud\CrudAspNetApi\CrudAspNetApi\obj\Debug\netcoreapp3.1\CrudAspNetApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Ranos\Documents\Node-and-React-Research\NewNodeAndReactLearning\AspNetCoreCrud\CrudAspNetApi\CrudAspNetApi\obj\Debug\netcoreapp3.1\CrudAspNetApi.csproj.CopyComplete
