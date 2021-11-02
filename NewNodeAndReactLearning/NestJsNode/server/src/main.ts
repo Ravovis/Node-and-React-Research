@@ -4,6 +4,15 @@ import 'dotenv/config';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { Logger } from '@nestjs/common';
 
+const WebSocket = require('ws');
+const server = new WebSocket.Server({port:8080});
+server.on('connection',socket=>{
+  socket.on('message', message =>{
+    socket.send(`Roger that! ${message}`);
+  })
+  setInterval(()=>{socket.send(`Server says his information`);},5000)
+})
+
 
 const port = process.env.PORT;
 

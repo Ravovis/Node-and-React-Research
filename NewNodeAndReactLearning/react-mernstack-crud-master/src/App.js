@@ -14,6 +14,14 @@ import EditDocument from "./components/edit-document.component";
 import DocumentList from "./components/document-list.component";
 
 function App() {
+const socket = new WebSocket('ws://localhost:8080');
+
+socket.onmessage = ({data}) =>{
+  console.log('Message from server', data);
+};
+
+setInterval(()=>{socket.send('hello')},10000)
+
   return (<Router>
     <div className="App">
       <header className="App-header">
