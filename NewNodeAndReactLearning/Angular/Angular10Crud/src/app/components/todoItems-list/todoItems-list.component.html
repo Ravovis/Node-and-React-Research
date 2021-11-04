@@ -1,0 +1,57 @@
+<div class="list row">
+  
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by text"
+          [(ngModel)]="text"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchText()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>todoItems List</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let todoItem of todoItems; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveTodoItem(todoItem, i)"
+        >
+          {{ todoItem.taskDescription }}
+        </li>
+      </ul>
+  
+      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTodoItems()">
+        Remove All
+      </button>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="currentTodoItem">
+        <h4>TodoItem</h4>
+        <div>
+          <label><strong>taskDescription:</strong></label> {{ currentTodoItem.taskDescription }}
+        </div>
+  
+        <a class="badge badge-warning" routerLink="/todoItems/{{ currentTodoItem.id }}" 
+        routerLinkActive="ranos">
+          Edit
+        </a>
+      </div>
+  
+      <div *ngIf="!currentTodoItem">
+        <br />
+        <p>Please click on a TodoItem...</p>
+      </div>
+    </div>
+  </div>

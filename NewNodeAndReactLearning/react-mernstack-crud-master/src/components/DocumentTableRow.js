@@ -11,7 +11,7 @@ export default class DocumentTableRow extends Component {
     }
 
     deleteDocument() {
-        axios.delete('http://localhost:4000/delete?id=' + this.props.obj._id)
+        axios.delete('http://localhost:4000/delete?id=' + this.props.obj.id)
             .then((res) => {
                 console.log('Document successfully deleted!')
             }).catch((error) => {
@@ -26,7 +26,7 @@ export default class DocumentTableRow extends Component {
             <tr>
                 <td>{this.props.obj.text}</td>
                 <td>
-                    <Link className="edit-link" to={"/edit-document/" + this.props.obj._id}>
+                    <Link className="edit-link" to={"/edit-document/" + this.props.obj.id}>
                         Edit
                     </Link>
                     <Button onClick={this.deleteDocument} size="sm" variant="danger">Delete</Button>

@@ -1,0 +1,37 @@
+<div style="width: 400px; margin: auto;">
+    <div *ngIf="currentTodoItem" class="edit-form">
+      <h4>TodoItem</h4>
+      <form>
+        <div class="form-group">
+          <label for="text">Text</label>
+          <input
+            type="text"
+            class="form-control"
+            id="text"
+            [(ngModel)]="currentTodoItem.taskDescription"
+            name="text"
+          />
+        </div>
+  
+      </form>
+  
+  
+      <button class="badge badge-danger mr-2" (click)="deleteTodoItem()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success"
+        (click)="updateTodoItem()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentTodoItem">
+      <br />
+      <p>Cannot access this TodoItem...</p>
+    </div>
+  </div>

@@ -21,7 +21,8 @@ namespace CrudAspNetApi.Controllers
         [HttpGet(Name = "GetAllItems")]
         public IEnumerable<TodoItem> Get()
         {
-            return TodoRepository.Get();
+            var result =  TodoRepository.Get();
+            return result;
         }
 
         [HttpGet("{id}", Name = "GetTodoItem")]
@@ -45,7 +46,7 @@ namespace CrudAspNetApi.Controllers
                 return BadRequest();
             }
             TodoRepository.Create(todoItem);
-            return CreatedAtRoute("GetTodoItem", new { id = todoItem.Id }, todoItem);
+            return Ok();
         }
 
         [HttpPut("{id}")]
@@ -63,7 +64,7 @@ namespace CrudAspNetApi.Controllers
             }
 
             TodoRepository.Update(updatedTodoItem);
-            return RedirectToRoute("GetAllItems");
+            return Ok();
         }
 
         [HttpDelete("{id}")]

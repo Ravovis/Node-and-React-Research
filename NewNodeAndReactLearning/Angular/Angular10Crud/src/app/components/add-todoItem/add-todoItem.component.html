@@ -1,0 +1,25 @@
+<div style="width: 400px; margin: auto;">
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="text">taskDescription</label>
+          <input
+            type="text"
+            class="form-control"
+            id="text"
+            required
+            [(ngModel)]="todoItem.taskDescription"
+            name="text"
+          />
+        </div>
+  
+  
+        <button (click)="saveTodoItem()" class="btn btn-success">Submit</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>You submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newTodoItem()">Add</button>
+      </div>
+    </div>
+  </div>
