@@ -7,23 +7,38 @@ import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
+
+
+
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import CreateDocument from "./components/create-document.component";
 import EditDocument from "./components/edit-document.component";
 import DocumentList from "./components/document-list.component";
 
+import { useSelector,useDispatch } from 'react-redux'
+import { decrement, increment } from './actions'
+
+
 function App() {
-const socket = new WebSocket('ws://localhost:8080');
+  const counter = useSelector ( state => state.counterReducer );
+  const dispatch = useDispatch();
 
-socket.onmessage = ({data}) =>{
-  console.log('Message from server', data);
-};
+  const socket = new WebSocket('ws://localhost:8080');
 
-setInterval(()=>{socket.send('hello')},10000)
+  socket.onmessage = ({data}) =>{
+    console.log('Message from server', data);
+  };
+
+  setInterval(()=>{socket.send('hello')},10000)
 
   return (<Router>
-    <div className="App">
+    <div>
+      <h1>Counter {counter}</h1>
+      <button onClick={()=>dispatch(increment())}>+</button>
+      <button onClick={()=>dispatch(decrement())}>-</button>
+      </div>
+      <div className="App">
       <header className="App-header">
         <Navbar bg="dark" variant="dark">
           <Container>
@@ -73,6 +88,7 @@ setInterval(()=>{socket.send('hello')},10000)
         </Row>
       </Container>
     </div>
+   
   </Router>);
 }
 
