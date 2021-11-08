@@ -6001,26 +6001,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ranos\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ranos\\Documents\\Node-and-React-Research\\NewNodeAndReactLearning\\AspNetCoreCrud\\CrudAspNetApi\\CrudAspNetApi\\CrudAspNetApi.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\Node-and-React-Research\\NewNodeAndReactLearning\\AspNetCoreCrud\\CrudAspNetApi\\CrudAspNetApi\\CrudAspNetApi.csproj",
       "projectName": "CrudAspNetApi",
-      "projectPath": "C:\\Users\\Ranos\\Documents\\Node-and-React-Research\\NewNodeAndReactLearning\\AspNetCoreCrud\\CrudAspNetApi\\CrudAspNetApi\\CrudAspNetApi.csproj",
-      "packagesPath": "C:\\Users\\Ranos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ranos\\Documents\\Node-and-React-Research\\NewNodeAndReactLearning\\AspNetCoreCrud\\CrudAspNetApi\\CrudAspNetApi\\obj\\",
+      "projectPath": "C:\\Users\\User\\Documents\\Node-and-React-Research\\NewNodeAndReactLearning\\AspNetCoreCrud\\CrudAspNetApi\\CrudAspNetApi\\CrudAspNetApi.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Documents\\Node-and-React-Research\\NewNodeAndReactLearning\\AspNetCoreCrud\\CrudAspNetApi\\CrudAspNetApi\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Ranos\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6034,8 +6027,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Ranos\\Documents\\Node-and-React-Research\\NewNodeAndReactLearning\\AspNetCoreCrud\\CrudAspNetApi\\Model\\Model.csproj": {
-              "projectPath": "C:\\Users\\Ranos\\Documents\\Node-and-React-Research\\NewNodeAndReactLearning\\AspNetCoreCrud\\CrudAspNetApi\\Model\\Model.csproj"
+            "C:\\Users\\User\\Documents\\Node-and-React-Research\\NewNodeAndReactLearning\\AspNetCoreCrud\\CrudAspNetApi\\Model\\Model.csproj": {
+              "projectPath": "C:\\Users\\User\\Documents\\Node-and-React-Research\\NewNodeAndReactLearning\\AspNetCoreCrud\\CrudAspNetApi\\Model\\Model.csproj"
             }
           }
         }

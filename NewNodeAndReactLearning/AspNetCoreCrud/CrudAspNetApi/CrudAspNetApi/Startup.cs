@@ -27,16 +27,11 @@ namespace CrudAspNetApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+
             services.AddTransient<ITodoRepository, EFTodoRepository>();
             services.AddSwaggerGen();
-            services.AddCors(options =>
-            {
-                options.AddPolicy("CorsPolicy",
-                    builder => builder.WithOrigins("http://localhost:4200")
-                    .AllowAnyMethod()
-                    .AllowAnyHeader()
-                    .AllowCredentials());
-            });
+           
             services.AddControllers();
             services.AddDbContext<TodoContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
             
@@ -63,9 +58,12 @@ namespace CrudAspNetApi
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Test1 Api v1");
             });
 
-            app.UseRouting();
+            app.UseCors(buider =>
+            {
+                buider.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+            });
 
-            app.UseCors("CorsPolicy");
+            app.UseRouting();
 
             app.UseAuthorization();
 
